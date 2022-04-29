@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: g6-todo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: g6-todo
+  template:
+    metadata:
+      labels:
+        app: g6-todo
+    spec:
+      containers:
+        - name: g6-todo
+          image: krishna3010/g6-todo
+          ports:
+            - containerPort: 80
